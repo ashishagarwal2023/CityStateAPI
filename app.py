@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 import json
 
@@ -14,6 +15,7 @@ def getAllStates():
     return states
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/allStates", methods=["POST", "GET"])
 def all():
